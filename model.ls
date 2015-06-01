@@ -1,8 +1,21 @@
 
-# lint : give a json, return true / false + reason
-# clean: give a json, return a normalized json
-# expand: give a json, expand id inside
-# create: create an object of this kind
+# usage
+# MyType = new model({
+#   self: { constraint applied to object itself }
+#   base: { constraint applied to object members }
+#   lint: (obj) -> manually check if obj is valid.
+#     return [isFailed, whichKey, whyFailed, recursiveReason]
+#   create: (obj) ->
+#     obj will be given default value according to self and base 
+#     but one can still alter it in this function
+#   expand: -> 
+#     to expand foreign key
+#   shrink: ->
+#     convert object to foreign key
+# })
+
+# in base, self, or argument of model.type.array, we use config object like:
+#   {max, min, required, type: MyType}
 
 # return : [isFailed, whichKey, whyFailed, recursiveReason]
 model = ((config)->

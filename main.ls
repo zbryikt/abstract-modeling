@@ -26,6 +26,7 @@ base.color = new model do
     semantic: {type: model.type.semantic}
 
 base.palette = new model do
+  name: \palette
   base: do
     name: {type: base.name}
     tags: {type: base.tags}
@@ -36,6 +37,7 @@ base.palette = new model do
   shrink: -> it.key
 
 base.palset = new model do
+  name: \palset
   base: do
     name: {type: base.name}
     tags: {type: base.tags}
